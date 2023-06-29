@@ -1,6 +1,6 @@
 namespace FlashcardsAPI.Service.FlashcardsAppService;
 
-public class FlashcardsAppService
+public class FlashcardsAppService : IFlashcardsAppService 
 {
     
 }
