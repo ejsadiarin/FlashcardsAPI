@@ -1,22 +1,24 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 namespace FlashcardsAPI.Data;
 
 public class FlashcardsAppDataAccess
 {
+    // can be "Data Source"
     private const string ConnectionString = "Server=(LocalDb)\\FlashcardsLocalDB;Database=FlashcardsAppDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
-    public void CreateCommand(string query)
+    public static async Task CreateCommand()
     {
-        using var connection = new SqlConnection(ConnectionString);
-        connection.Open();
+        await using var connection = new SqlConnection(ConnectionString);
+        await connection.OpenAsync();
 
         const string createStacksTableQuery = @"CREATE TABLE IF NOT EXISTS Stacks (
                 Id INT PRIMARY KEY AUTOINCREMENT, 
                 StackName VARCHAR(50),
                 )";
-        using (var command = new SqlCommand(createStacksTableQuery, connection))
+        await using (var command = new SqlCommand(createStacksTableQuery, connection))
         {
-            command.ExecuteNonQuery();
+            await command.ExecuteNonQueryAsync();
         }
 
         const string createFlashcardsTableQuery = @"CREATE TABLE IF NOT EXISTS Flashcards (
@@ -27,11 +29,12 @@ public class FlashcardsAppDataAccess
                 StackId INT,
                 FOREIGN KEY (StackId) REFERENCES Stacks(Id)
                 )";
-        using (var command = new SqlCommand(createFlashcardsTableQuery, connection))
+        await using (var command = new SqlCommand(createFlashcardsTableQuery, connection))
         {
-            command.ExecuteNonQuery();
+            await command.ExecuteNonQueryAsync();
         }
 
-        connection.Close();
+        await connection.CloseAsync();
     }
+    
 }

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashcardsAPI", "FlashcardsAPI\FlashcardsAPI.csproj", "{978268DB-20EA-47FC-B87F-9C298672D3CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashcardsAPI.NoEF", "FlashcardsAPI.NoEF\FlashcardsAPI.NoEF.csproj", "{978268DB-20EA-47FC-B87F-9C298672D3CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashcardsAPI.EF.MSSQL", "FlashcardsAPI.EF.MSSQL\FlashcardsAPI.EF.MSSQL.csproj", "{88C3F676-A28F-4C78-86A3-5221DCF67EB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{978268DB-20EA-47FC-B87F-9C298672D3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{978268DB-20EA-47FC-B87F-9C298672D3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{978268DB-20EA-47FC-B87F-9C298672D3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C3F676-A28F-4C78-86A3-5221DCF67EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C3F676-A28F-4C78-86A3-5221DCF67EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C3F676-A28F-4C78-86A3-5221DCF67EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C3F676-A28F-4C78-86A3-5221DCF67EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
